@@ -12,8 +12,8 @@ Origin Data Link: https://pan.baidu.com/s/1MAVFHm-RmTfiVIC1WVvsdg?pwd=3q7h  Extr
 
 ## 📂 Dataset Files
 
-- **`adj_matrix.csv`**  
-  Road network adjacency matrix.
+- **`gy_link_info.txt` and `gy_link_top.txt`**  
+  gy_link_info.txt and gy_link_top.txt contain the road connection information and can be used to construct the adjacency matrix of the traffic network.
 
 - **Traffic flow data (three `.txt` files)**  
   Each file contains original traffic flow records with the following fields:  
