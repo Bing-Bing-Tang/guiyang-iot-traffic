@@ -1,34 +1,78 @@
-# guiyang-iot-traffic
-Large-scale real-world IoT traffic dataset collected in Guiyang, China
+==================================================
+DATASET DESCRIPTION
+==================================================
 
-# Guiyang Traffic Flow Dataset
+■ Overview
+--------------------------------------------------
+The Guizhou traffic flow dataset is collected from real-world traffic operation data
+on major urban road segments in Guiyang City, Guizhou Province, China.
 
-This repository contains the datasets used for traffic flow analysis and forecasting in Guiyang, China.  
-The data can be used for spatial-temporal modeling, graph neural networks, and intelligent transportation system research.  
+The dataset consists of 132 road segments, together with their upstream and downstream
+topological relationships, which describe the spatial structure of the road network.
+It contains average travel time records from March to May 2016 and from March to May
+2017.
 
-Origin Data Link: https://pan.baidu.com/s/1MAVFHm-RmTfiVIC1WVvsdg?pwd=3q7h  Extraction Code: 3q7h 
+In this study, travel time is selected as the prediction target, while the remaining
+variables are used as input features.
 
----
 
-## 📂 Dataset Files
+■ File Structure
+--------------------------------------------------
+The dataset is organized into the following files:
 
-- **`gy_link_info.txt` and `gy_link_top.txt`**  
-  gy_link_info.txt and gy_link_top.txt contain the road connection information and can be used to construct the adjacency matrix of the traffic network.
+  ▶ gy_link_info.txt
+  ▶ gy_link_top.txt
+  ▶ part1.txt, part2.txt, part3.txt
 
-- **Traffic flow data (three `.txt` files)**  
-  Each file contains original traffic flow records with the following fields:  
-  - `link_ID`: Road segment ID  
-  - `date`: Date of observation  
-  - `time_interval`: Time interval of measurement  
-  - `travel_time`: Average travel time (in seconds)  
 
----
+■ 1. Road Network Information
+--------------------------------------------------
+(gy_link_info.txt and gy_link_top.txt)
 
-## 🗓️ Additional Information
+These files provide road segment attributes and connectivity information, which can be
+used to construct the adjacency matrix of the traffic network.
 
-- **Holiday and weekend labels**  
-  These can be derived from the `date` field.  
 
-- **Weather data**  
-  Meteorological information (temperature, relative humidity, wind speed, pressure, and precipitation) can be obtained from the **China Meteorological Data Service Center (National Meteorological Science Data Center)**:  
-  👉 [http://data.cma.cn/](http://data.cma.cn/)  
+  ◇ Variables
+
+      ▸ link_ID
+          Type: string
+          Description: Unique identifier of a road segment, consistent with the
+                       identifiers used in the travel time data.
+
+      ▸ length
+          Type: integer
+          Description: Physical length of the road segment, measured in meters.
+
+      ▸ width
+          Type: integer
+          Description: Width of the road segment, measured in meters.
+
+      ▸ link_class
+          Type: integer
+          Description: Road classification level, indicating the functional
+                       category of the road segment.
+
+
+■ 2. Traffic Flow Data
+--------------------------------------------------
+(part1.txt, part2.txt, part3.txt)
+
+Each file contains raw traffic flow records for road segments.
+
+
+  ◇ Variables
+
+      ▸ link_ID
+          Description: Identifier of the road segment.
+
+      ▸ date
+          Description: Calendar date of the traffic observation.
+
+      ▸ time_interval
+          Description: Time interval during which the traffic measurement is
+                       aggregated.
+
+      ▸ travel_time
+          Description: Average travel time of vehicles on the corresponding road
+                       segment during the given time interval, measured in seconds.
