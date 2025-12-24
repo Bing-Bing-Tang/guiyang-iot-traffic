@@ -1,0 +1,4 @@
+Owing to the large volume of the full dataset, it cannot be uploaded to GitHub in its entirety.
+Therefore, only the road connectivity data are provided in this repository.
+The complete dataset is available from the authors upon reasonable request.
+Contact email: tbb15838035836@163.com
